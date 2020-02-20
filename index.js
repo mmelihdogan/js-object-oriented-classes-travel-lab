@@ -34,5 +34,12 @@ class Route {
             return eastWest.indexOf(this.endingLocation.horizontal) - eastWest.indexOf(this.beginningLocation.horizontal) + (this.endingLocation.vertical - this.beginningLocation.vertical);
         } 
 
+        estimatedTime(peakHour = false) {
+                if(!peakHour) {
+                    return this.blocksTravelled() / 3;
+                }
+
+                return this.blocksTravelled() / 2;
+        }
 
     }
